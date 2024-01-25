@@ -1,16 +1,16 @@
 <template>
     <HeaderDiv/>
     <form class="login" @submit.prevent="login">
-        <h1>Sign in</h1>
-        <label>email</label>
+        <h1>Авторизация</h1>
+        <label>Электронная почта</label>
         <input type="email" v-model="email" :class="{'error': emailError}"/>
         <span v-if="emailError" class="error-text">{{ emailError }}</span>
-        <label>password</label>
+        <label>Пароль</label>
         <input type="password" v-model="password" :class="{'error': passwordError}"/>
         <span v-if="passwordError" class="error-text">{{ passwordError }}</span>
         <hr />
-        <button class="login-btn" type="submit">Login</button>
-        <span v-if="authError" class="error-text">Wrong password or email</span>
+        <button class="login-btn" type="submit">Войти</button>
+        <span v-if="authError" class="error-text">Неправильный пароль или почта!</span>
     </form>
 </template>
 
@@ -68,23 +68,32 @@ export default {
 </script>
 
 <style scoped>
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 .login {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
     padding: 10px;
-    margin: 0 auto;
+    margin: 10% auto;
     gap: 10px;
 }
 
-.login input,
-button {
+.login input, button {
     border: 1px solid black;
     border-radius: 5px;
     height: 35px;
     font-size: 18px;
 }
-
+.login-btn{
+    background:black;
+    color:white;
+    transition: .2s linear;
+}
+.login-btn:hover{
+    color:#0c7075;
+}
 hr {
     margin: 10px 0;
 }

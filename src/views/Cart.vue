@@ -1,22 +1,24 @@
 <template>
     <HeaderDiv />
-    <h1 v-show="groupedCarts.length <= 0">No Items in Cart</h1>
-    <div class="cart-item" v-for="cart in groupedCarts" :key="cart.id">
-        <div class="cart-text">
-            <h3 class="cart-item-text">{{ cart.name }}</h3>
-            <p class="cart-item-desc">{{ cart.description }}</p>
-            <p class="cart-item-price"><span class="price-text">Price</span> - {{ cart.price }}$</p>
-        </div>
-        <div class="cart-btn">
-            <div class="quantity-btn">
-                <button class="cart-btn-item cart-btn" @click="decreaseQuantity(cart.id)">-</button>
-                <span class="cart-btn-item">{{ cart.quantity }}</span>
-                <button class="cart-btn-item cart-btn" @click="increaseQuantity(cart.product_id)">+</button>
+    <div class="cart-body">
+        <h1 v-show="groupedCarts.length <= 0">Корзина пуста.</h1>
+        <div class="cart-item" v-for="cart in groupedCarts" :key="cart.id">
+            <div class="cart-text">
+                <h3 class="cart-item-text">{{ cart.name }}</h3>
+                <p class="cart-item-desc">{{ cart.description }}</p>
+                <p class="cart-item-price"><span class="price-text">Price</span> - {{ cart.price }}$</p>
             </div>
-            <button class="cart-btn-delete" @click="removeItem(cart)">DELETE</button>
+            <div class="cart-btn">
+                <div class="quantity-btn">
+                    <button class="cart-btn-item cart-btn" @click="decreaseQuantity(cart.id)">-</button>
+                    <span class="cart-btn-item">{{ cart.quantity }}</span>
+                    <button class="cart-btn-item cart-btn" @click="increaseQuantity(cart.product_id)">+</button>
+                </div>
+                <button class="cart-btn-delete" @click="removeItem(cart)">Удалить</button>
+            </div>
         </div>
+        <button class="order-btn" v-show="groupedCarts.length > 0" @click="placeOrder">ЗАКАЗАТЬ</button>
     </div>
-    <button class="order-btn" v-show="groupedCarts.length > 0" @click="placeOrder">ORDER</button>
 </template>
 
 <script>
@@ -69,6 +71,10 @@ export default {
 </script>
 
 <style scoped>
+h1{
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+}
 .price-text {
     color: #00b928;
 }
@@ -83,6 +89,7 @@ export default {
 
 .cart-text {
     width: 500px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .cart-btn {
@@ -119,12 +126,21 @@ export default {
 }
 
 .order-btn {
+    font-family: 'Montserrat', sans-serif;
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    left: 40%;
+    bottom: 50px;
+    width: 20%;
     height: 50px;
     font-size: 30px;
     border: 0;
-    background: #8f8e8e;
-}</style>
+    border-radius:15px;
+    background: black;
+    color:white;
+    transition: .2s linear;
+}
+.order-btn:hover{
+    background:black;
+    color:#00A287;
+}
+</style>

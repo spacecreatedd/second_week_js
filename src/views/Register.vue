@@ -1,18 +1,18 @@
 <template>
     <HeaderDiv/>
     <form class="register" @submit.prevent="register">
-        <h1>Register</h1>
-        <label>fio</label>
+        <h1>Регистрация</h1>
+        <label>Имя</label>
         <input type="text" v-model="fio" :class="{'error': fioError}" />
         <span v-if="fioError" class="error-text">{{ fioError }}</span>
-        <label>email</label>
+        <label>Электронная почта</label>
         <input type="email" v-model="email" :class="{'error': emailError}" />
         <span v-if="emailError" class="error-text">{{ emailError }}</span>
-        <label>password</label>
+        <label>Пароль</label>
         <input type="password" v-model="password" :class="{'error': passwordError}"/>
         <span v-if="passwordError" class="error-text">{{ passwordError }}</span>
         <hr />
-        <button type="submit">Register</button>
+        <button class="register-btn" type="submit">Зарегестрироваться</button>
         
     </form>
 </template>
@@ -80,15 +80,25 @@ export default {
 </script>
 
 <style scoped>
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 .register {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 350px;
     padding: 10px;
-    margin: 0 auto;
+    margin: 10% auto;
     gap: 10px;
 }
-
+.register-btn{
+    background:black;
+    color:white;
+    transition: .2s linear;
+}
+.register-btn:hover{
+    color:#0c7075;
+}
 .register input,
 button {
     border: 1px solid black;

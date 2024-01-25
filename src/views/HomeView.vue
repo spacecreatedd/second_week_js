@@ -6,7 +6,7 @@
       <p class="product_text">{{ product.description }}</p>
       <div class="product_bottom">
         <p class="product_price">{{ product.price }}$</p>
-        <button class="product_btn" v-show="userAuthed" @click="addToCart(product.id)">Add to Cart</button>
+        <button class="product_btn" v-show="userAuthed" @click="addToCart(product.id)">В корзину</button>
       </div>
     </div>
   </div>
@@ -39,7 +39,11 @@ export default {
 </script>
 
 <style scoped>
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 .catalog-grid {
+  background-color:;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -48,12 +52,13 @@ export default {
   width: 50%;
   text-align: center;
   margin: 0 auto;
+  color:#294d61;
+  font-weight: 600;
 }
 .product_btn{
-  height: 40px;
-  width: 75px;
+  padding:10px;
   font-size: 17px;
-  background: #047275;
+  background: black;
   border: 0;
   border-radius: 10px;
   color: #fff;
