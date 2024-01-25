@@ -55,5 +55,6 @@ export default{
     border: 0;
     border-radius: 10px;
     color: #000;
+    font-weight:bold;
 }
 </style>

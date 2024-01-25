@@ -43,11 +43,10 @@ export default {
     font-family: 'Montserrat', sans-serif;
 }
 .catalog-grid {
-  background-color:;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
+}
 .catalog-item {
   width: 50%;
   text-align: center;
@@ -62,6 +61,13 @@ export default {
   border: 0;
   border-radius: 10px;
   color: #fff;
+  transition: .2s linear;
+}
+.product_btn:hover{
+  color:#0c7075;
+}
+.product_text{
+  font-size:20px;
 }
 .product_bottom{
   display: flex;

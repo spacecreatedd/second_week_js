@@ -1,20 +1,19 @@
 <template>
   <HeaderDiv />
   <div>
-    <h1 v-if="orders.length <= 0">No Orders In Order</h1>
-    <h1 v-else>Your Orders:</h1>
+    <h1 v-if="orders.length <= 0">Нет заказов.</h1>
+    <h1 v-else>Ваши заказы:</h1>
     <ul>
       <li class="order" v-for="order in orders" :key="order.id">
         <div class="upper-text">
-          <p>Order ID: {{ order.id }}</p>
-          <p>Products: </p>
+          <p>ID Заказа: {{ order.id }}</p>
         </div>
         <div class="main-text">
           <p v-for="product in products">
             {{product.name }}
           </p>
         </div>
-        <p class="bottom-text">Price - {{ order.order_price }}$</p>
+        <p class="bottom-text">Цена - {{ order.order_price }}$</p>
       </li>
     </ul>
   </div>
@@ -75,10 +74,25 @@ export default {
 </script>
 
 <style scoped>
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+    color:black;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  background-color: silver;
+}
   .order{
     list-style-type: none;
     width: 40%;
     margin: 15px auto;
+    font-size:20px;
+    text-align:center;
+    font-size:22px;
+    font-weight:500;
   }
   .upper-text{
     display: flex;
@@ -86,5 +100,9 @@ export default {
     justify-content: space-around;
     font-weight: bold;
   }
-
+.bottom-text {
+    color: #00b928;
+    font-size:20px;
+    font-weight:600;
+}
 </style>

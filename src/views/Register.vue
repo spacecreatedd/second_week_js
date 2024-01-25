@@ -101,10 +101,11 @@ export default {
 }
 .register input,
 button {
-    border: 1px solid black;
+    border:none;
     border-radius: 5px;
     height: 35px;
     font-size: 18px;
+    background:white;
 }
 
 hr {

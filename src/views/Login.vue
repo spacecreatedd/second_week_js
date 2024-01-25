@@ -79,12 +79,12 @@ export default {
     margin: 10% auto;
     gap: 10px;
 }
-
 .login input, button {
-    border: 1px solid black;
+    border:none;
     border-radius: 5px;
     height: 35px;
     font-size: 18px;
+    background:white;
 }
 .login-btn{
     background:black;

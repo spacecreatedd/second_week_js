@@ -6,7 +6,7 @@
             <div class="cart-text">
                 <h3 class="cart-item-text">{{ cart.name }}</h3>
                 <p class="cart-item-desc">{{ cart.description }}</p>
-                <p class="cart-item-price"><span class="price-text">Price</span> - {{ cart.price }}$</p>
+                <p class="cart-item-price"><span class="price-text">Цена</span> - {{ cart.price }}$</p>
             </div>
             <div class="cart-btn">
                 <div class="quantity-btn">
@@ -71,12 +71,16 @@ export default {
 </script>
 
 <style scoped>
-h1{
+*{
     font-family: 'Montserrat', sans-serif;
+}
+h1{
     color:black;
 }
 .price-text {
     color: #00b928;
+    font-size:20px;
+    font-weight:600;
 }
 
 .cart-item {
@@ -95,6 +99,7 @@ h1{
 .cart-btn {
     display: flex;
     flex-direction: column;
+    font-size:25px;
 }
 
 .cart-btn-item {
@@ -110,16 +115,23 @@ h1{
     display: flex;
     align-items: center;
 }
-
+.quantity-btn button{
+    background:black;
+    color:white;
+}
 .cart-btn-delete {
     margin-top: 10px;
-    width: 100px;
-    height: 40px;
-    font-size: 13px;
+    padding:10px 15px;
+    font-size: 20px;
     border-radius: 10px;
     border: 0;
+    background:black;
+    color:white;
+    transition: .2s linear;
 }
-
+.cart-btn-delete:hover{
+    color:#00A287;
+}
 .cart-btn {
     border: 0;
     border-radius: 10px;
@@ -140,7 +152,7 @@ h1{
     transition: .2s linear;
 }
 .order-btn:hover{
-    background:black;
+    background-color:black;
     color:#00A287;
 }
 </style>
